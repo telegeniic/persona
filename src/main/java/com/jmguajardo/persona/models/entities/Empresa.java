@@ -10,6 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.jmguajardo.persona.models.requests.CreateEmpresa;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -33,4 +35,9 @@ public class Empresa {
     @OneToMany(mappedBy="empresa")
     private List<Persona> personas;
     
+    public Empresa(CreateEmpresa cEmpresa){
+        this.empresa = cEmpresa.getEmpresa();
+        this.direccion = cEmpresa.getDireccion();
+    }
+
 }

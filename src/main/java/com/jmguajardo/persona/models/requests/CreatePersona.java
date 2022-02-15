@@ -1,7 +1,5 @@
 package com.jmguajardo.persona.models.requests;
 
-import com.jmguajardo.persona.models.entities.Empresa;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -15,5 +13,7 @@ public class CreatePersona {
 
     private Integer edad;
 
-    private Empresa empresa;
+    private String empresa;
+
+    private String direccionEmpresa;
 }

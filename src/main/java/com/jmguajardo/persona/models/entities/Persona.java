@@ -38,7 +38,6 @@ public class Persona {
     public Persona(CreatePersona cPersona){
         this.nombre = cPersona.getNombre();
         this.edad = cPersona.getEdad();
-        this.empresa = cPersona.getEmpresa();
     }
     
 }
