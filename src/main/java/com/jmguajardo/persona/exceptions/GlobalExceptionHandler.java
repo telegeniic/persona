@@ -22,6 +22,7 @@ public class GlobalExceptionHandler {
         return new ResponseEntity<ErrorDetails>(errorDetails, HttpStatus.NOT_FOUND);
     }
 
+    @ExceptionHandler(PersonaNotFoundException.class)
     public ResponseEntity<ErrorDetails> handlePersonaNotFound(PersonaNotFoundException ex){
         ErrorDetails errorDetail = new ErrorDetails(ex.getCod(), ex.getMessage());
         return new ResponseEntity<ErrorDetails>(errorDetail, HttpStatus.NOT_FOUND);

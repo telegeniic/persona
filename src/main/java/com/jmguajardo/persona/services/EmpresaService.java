@@ -1,5 +1,7 @@
 package com.jmguajardo.persona.services;
 
+import java.util.Optional;
+
 import com.jmguajardo.persona.models.entities.Empresa;
 import com.jmguajardo.persona.models.requests.CreateEmpresa;
 import com.jmguajardo.persona.repositories.EmpresaRepository;
@@ -17,9 +19,7 @@ public class EmpresaService {
         return empresaRepository.save(new Empresa(cEmpresa));
     }
 
-    public Empresa searchEmpresa(String empresa, String direccion){
-        CreateEmpresa cEmpresa = new CreateEmpresa(empresa, direccion);
-        return empresaRepository.findByEmpresaAndDireccion(empresa, direccion)
-        .orElse(empresaRepository.save(new Empresa(cEmpresa)));
+    public Optional<Empresa> searchEmpresa(String empresa){
+        return empresaRepository.findByEmpresa(empresa);
     }
 }

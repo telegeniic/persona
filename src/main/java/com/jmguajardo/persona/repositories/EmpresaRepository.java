@@ -9,5 +9,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface EmpresaRepository extends JpaRepository<Empresa, Long>{
-    Optional<Empresa> findByEmpresaAndDireccion(String empresa, String direccion);
+    Optional<Empresa> findByEmpresa(String empresa);
 }
