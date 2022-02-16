@@ -26,7 +26,7 @@ public class Empresa {
     @Column(name="id")
     private Long id;
 
-    @Column(name="empresa", unique=true)
+    @Column(name="empresa")
     private String empresa;
 
     @Column(name="direccion")

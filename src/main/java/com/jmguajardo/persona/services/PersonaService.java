@@ -54,9 +54,9 @@ public class PersonaService {
     public Saludo getSaludo(){
         LocalDateTime date = LocalDateTime.now();
         Integer hora = date.getHour();
-        String url = "http://localhost:8082/api/saludo/get/morning";
-        if(hora > 11 && hora < 18) url ="http://localhost:8082/api/saludo/get/evening";
-        if(hora > 17 && hora < 4) url ="http://localhost:8082/api/saludo/get/night";
+        String url = "http://localhost:8082/api/saludo/get/night"; //default
+        if(hora > 4 && hora < 12) url ="http://localhost:8082/api/saludo/get/mornin";// (4,12) == [5,12) == [5,11] para los naturales
+        else if(hora > 11 && hora < 18) url ="http://localhost:8082/api/saludo/get/evening"; //(11,18) == [12,18) == [12,17] para los naturales
         RestTemplate template = new RestTemplate();
         Saludo saludo = template.getForObject(url, Saludo.class);
         return saludo;
